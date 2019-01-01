@@ -46,4 +46,20 @@
         android:background="@color/category_phrases"
         android:text="@string/category_phrases" />
 
+    <TextView
+        android:id="@+id/places"
+        style="@style/CategoryStyle"
+        android:background="@color/category_places"
+        android:text="@string/category_places"
+
+        />
+
+    <TextView
+        android:id="@+id/townsVillages"
+        style="@style/CategoryStyle"
+        android:background="@color/category_townsVillages"
+        android:text="@string/category_townsVillages"
+
+        />
+
 </LinearLayout>

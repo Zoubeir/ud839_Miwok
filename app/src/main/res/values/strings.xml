@@ -27,4 +27,12 @@
 
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
     <string name="category_family">Family Members</string>
+
+    <!-- Category name for the vocabulary words for places [CHAR LIMIT=20] -->
+    <string name="category_places">Places</string>
+
+    <!-- Category name for the vocabulary words for Towns and Villages [CHAR LIMIT=20] -->
+    <string name="category_townsVillages">Towns &amp; Villages</string>
+
+
 </resources>

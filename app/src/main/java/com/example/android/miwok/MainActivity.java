@@ -94,5 +94,40 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(phrasesIntent);
             }
         });
+
+
+        //find the View that shows the places category
+        TextView places = findViewById(R.id.places);
+
+        //set a click listener to that View
+        places.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //create an intent to open the PlacesActivity
+                Intent placesIntent = new Intent(MainActivity.this, PlacesActivity.class);
+                startActivity(placesIntent);
+            }
+        });
+
+
+        //find the View that shows the towns and villages category
+        TextView townsVillages = findViewById(R.id.townsVillages);
+
+        //set a click listener on that View
+        townsVillages.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //create an intent to open the TownsAndVillagesActivity
+                Intent placesIntent = new Intent(MainActivity.this, TownsAndVillagesActivity.class);
+                startActivity(placesIntent);
+            }
+        });
+
+
     }
+
+
+
+
+
 }

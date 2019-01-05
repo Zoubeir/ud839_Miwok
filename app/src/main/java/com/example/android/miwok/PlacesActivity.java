@@ -20,125 +20,18 @@ public class PlacesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_places);
 
         //ArrayList to hold the name of the districts in mauritius
-        ArrayList<String> districtList = new ArrayList<String>();
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
+        ArrayList<Word> districtList = new ArrayList<Word>();
+        districtList.add(new Word("Port Louis","Porlwi"));
+        districtList.add(new Word("Pamplemouss", "Pamplemous"));
+        districtList.add(new Word("Rivière du Rempart","Rivier di Rampar"));
+        districtList.add(new Word("Moka", "Moka"));
+        districtList.add(new Word("Flacq", "Flak"));
+        districtList.add(new Word("Grand Port","Gran Por"));
+        districtList.add(new Word("Savanne", "Savan"));
+        districtList.add(new Word("Black River", "Rivier Noir"));
+        districtList.add(new Word("Plaines Wilhems","Plaine Wiliem" ));
 
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
-        districtList.add("Port Louis");
-        districtList.add("Pamplemouss");
-        districtList.add("Rivière du Rempart");
-        districtList.add("Moka");
-        districtList.add("Flacq");
-        districtList.add("Grand Port");
-        districtList.add("Savanne");
-        districtList.add("Black River");
-        districtList.add("Plaines Wilhems");
+
 
 
         /* log that districts are correctly being added
@@ -147,14 +40,11 @@ public class PlacesActivity extends AppCompatActivity {
         }
         */
 
-
-
-
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, districtList);
+        WordAdapter adapter = new WordAdapter(this, districtList);
 
         ListView listView = findViewById(R.id.list);
 
-        listView.setAdapter(itemsAdapter);
+        listView.setAdapter(adapter);
 
 
 

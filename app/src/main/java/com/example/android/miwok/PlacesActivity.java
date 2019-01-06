@@ -42,8 +42,8 @@ public class PlacesActivity extends AppCompatActivity {
 
         WordAdapter adapter = new WordAdapter(this, districtList);
 
+        //get a reference to the ListView and attach the adapter to the ListView
         ListView listView = findViewById(R.id.list);
-
         listView.setAdapter(adapter);
 
 

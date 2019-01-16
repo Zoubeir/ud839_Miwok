@@ -2,13 +2,7 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,7 +11,12 @@ public class PlacesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_places);
+        setTitle(R.string.category_places);
+
+        setContentView(R.layout.word_list);
+
+
+
 
         //ArrayList to hold the name of the districts in mauritius
         ArrayList<Word> districtList = new ArrayList<Word>();
@@ -40,7 +39,7 @@ public class PlacesActivity extends AppCompatActivity {
         }
         */
 
-        WordAdapter adapter = new WordAdapter(this, districtList);
+        WordAdapter adapter = new WordAdapter(this, districtList,R.color.category_places);
 
         //get a reference to the ListView and attach the adapter to the ListView
         ListView listView = findViewById(R.id.list);

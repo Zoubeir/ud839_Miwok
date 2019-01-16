@@ -11,6 +11,11 @@ public class Word {
     //Creole Translation for the Word
     private String mCreoleTranslation;
 
+    //constant keeping track if an image is provided
+    private static final int NO_IMAGE_PROVIDED = -1;
+    //Image for the Word
+    private int mImageResourceID = NO_IMAGE_PROVIDED ;
+
     /**
      * Construct a new Word with its default and Creole translation
      * @param defaultTranslation of Word
@@ -19,6 +24,18 @@ public class Word {
     public Word(String defaultTranslation, String creoleTranslation) {
         this.mDefaultTranslation = defaultTranslation;
         this.mCreoleTranslation = creoleTranslation;
+    }
+
+    /**
+     * Construct a new Word with its default and Creole translation
+     * @param defaultTranslation of Word
+     * @param creoleTranslation of Word
+     * @param imageResourceID of Word
+     */
+    public Word(String defaultTranslation, String creoleTranslation, int imageResourceID) {
+        this.mDefaultTranslation = defaultTranslation;
+        this.mCreoleTranslation = creoleTranslation;
+        this.mImageResourceID = imageResourceID;
     }
 
     /**
@@ -58,6 +75,23 @@ public class Word {
     }
 
 
+    /**
+     * Gets the Image Resource ID of the Word
+     *
+     * @return Image Resource ID of the Word
+     */
+    public int getImageResourceID() {
+
+        return mImageResourceID;
+    }
 
 
+    /**
+     * Return whether or not there is an image for this word
+     * @return
+     */
+    public boolean hasImage(){
+        return  mImageResourceID != NO_IMAGE_PROVIDED;
+
+    }
 }

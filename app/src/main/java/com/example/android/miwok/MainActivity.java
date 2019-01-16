@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
+
         // Find the View that shows the numbers category
         TextView numbers = (TextView) findViewById(R.id.numbers);
 
@@ -39,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
             // The code in this method will be executed when the numbers category is clicked on.
             @Override
             public void onClick(View view) {
+
+
+
                 // Create a new intent to open the {@link NumbersActivity}
                 Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
 
@@ -46,6 +51,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(numbersIntent);
             }
         });
+
+        //find the View that shows the places category
+        TextView places = findViewById(R.id.places);
+
+        //set a click listener to that View
+        places.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //create an intent to open the PlacesActivity
+                Intent placesIntent = new Intent(MainActivity.this, PlacesActivity.class);
+                startActivity(placesIntent);
+            }
+        });
+
+
+
 
         // Find the View that shows the family category
         TextView family = (TextView) findViewById(R.id.family);
@@ -96,18 +117,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //find the View that shows the places category
-        TextView places = findViewById(R.id.places);
 
-        //set a click listener to that View
-        places.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                //create an intent to open the PlacesActivity
-                Intent placesIntent = new Intent(MainActivity.this, PlacesActivity.class);
-                startActivity(placesIntent);
-            }
-        });
 
 
         //find the View that shows the towns and villages category
@@ -122,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(placesIntent);
             }
         });
+
 
 
     }

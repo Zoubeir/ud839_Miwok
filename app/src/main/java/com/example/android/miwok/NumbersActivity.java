@@ -15,14 +15,21 @@
  */
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
+
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +44,7 @@ public class NumbersActivity extends AppCompatActivity {
 
 
         //ArrayList to hold the name of the districts in mauritius
-        ArrayList<Word> numbersList = new ArrayList<Word>();
+        final ArrayList<Word> numbersList = new ArrayList<Word>();
         numbersList.add(new Word("One","Enn",R.drawable.number_one));
         numbersList.add(new Word("Two","de",R.drawable.number_two));
         numbersList.add(new Word("Three","trwa", R.drawable.number_three));
@@ -66,5 +73,17 @@ public class NumbersActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(adapter);
 
+        //Item click listener for the ListView
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), numbersList.get(position).getCreoleTranslation(), Toast.LENGTH_SHORT).show();
+
+                Log.i("onItemClick!", "item: "+numbersList.get(position).getCreoleTranslation());
+
+                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.one_creole);
+                mediaPlayer.start();
+            }
+        });
     }
 }

@@ -21,7 +21,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -45,10 +44,10 @@ public class NumbersActivity extends AppCompatActivity {
 
         //ArrayList to hold the name of the districts in mauritius
         final ArrayList<Word> numbersList = new ArrayList<Word>();
-        numbersList.add(new Word("One","Enn",R.drawable.number_one));
-        numbersList.add(new Word("Two","de",R.drawable.number_two));
-        numbersList.add(new Word("Three","trwa", R.drawable.number_three));
-        numbersList.add(new Word("Four", "Kat", R.drawable.number_four));
+        numbersList.add(new Word("One","Enn",R.drawable.number_one, R.raw.one_creole));
+        numbersList.add(new Word("Two","de",R.drawable.number_two, R.raw.two_creole));
+        numbersList.add(new Word("Three","trwa", R.drawable.number_three, R.raw.three_creole));
+        numbersList.add(new Word("Four", "Kat", R.drawable.number_four, R.raw.four_creole));
         numbersList.add(new Word("Five", "Sink", R.drawable.number_five));
         numbersList.add(new Word("Six","Sis", R.drawable.number_six));
         numbersList.add(new Word("Seven", "Set",R.drawable.number_seven));
@@ -81,7 +80,7 @@ public class NumbersActivity extends AppCompatActivity {
 
                 Log.i("onItemClick!", "item: "+numbersList.get(position).getCreoleTranslation());
 
-                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.one_creole);
+                mediaPlayer = MediaPlayer.create(getApplicationContext(), numbersList.get(position).getMCreoleAudio());
                 mediaPlayer.start();
             }
         });

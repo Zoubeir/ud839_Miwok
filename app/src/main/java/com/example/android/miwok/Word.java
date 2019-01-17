@@ -11,6 +11,9 @@ public class Word {
     //Creole Translation for the Word
     private String mCreoleTranslation;
 
+    //creole audio resource id for the Word
+    private int mCreoleAudio;
+
     //constant keeping track if an image is provided
     private static final int NO_IMAGE_PROVIDED = -1;
     //Image for the Word
@@ -36,6 +39,23 @@ public class Word {
         this.mDefaultTranslation = defaultTranslation;
         this.mCreoleTranslation = creoleTranslation;
         this.mImageResourceID = imageResourceID;
+    }
+
+    /**
+     * Construct a new Word with its default and Creole translation
+     * @param defaultTranslation of Word
+     * @param creoleTranslation of Word
+     * @param imageResourceID of Word
+     */
+    public Word(String defaultTranslation, String creoleTranslation, int imageResourceID, int creoleAudio) {
+        this.mDefaultTranslation = defaultTranslation;
+        this.mCreoleTranslation = creoleTranslation;
+        this.mImageResourceID = imageResourceID;
+        this.mCreoleAudio = creoleAudio;
+    }
+
+    public int getMCreoleAudio() {
+        return mCreoleAudio;
     }
 
     /**
